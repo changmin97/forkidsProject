@@ -11,9 +11,15 @@ const passport = require("passport");
 const session = require("express-session");
 const passportConfig = require("./passport");
 const cookieParser = require("cookie-parser");
+const redis = require('redis')
+const RedisStore = require('connect-redis')(session)
 // const swaggerUi = require("swagger-ui-express");
 // const swaggerFile = require("./swagger-output");
 
+const redisClient = redis.createClient({
+    url : `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
+    password : process.env.REDIS_PASSWORD,
+})
 // 소켓 관련 모듈
 const http = require('http');
 const socket = require('./socket');
@@ -48,6 +54,7 @@ app.use(
             httpOnly: true,
             secure: false,
         },
+        store : new RedisStore({ client : redisClient }),
     })
 );
 app.use(passport.initialize());
