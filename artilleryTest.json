@@ -1,6 +1,6 @@
 {
     "config": {
-      "target": "http://localhost:3000",
+      "target": "https://study-jh.shop",
       "phases": [
         {
           "duration": 60,
@@ -26,7 +26,7 @@
             "post": {
               "url": "/api/users/signin",
               "json": {
-                "email": "jehun@naver.com",
+                "email": "notpost123@naver.com",
                 "password": "asd123"
               },
               "capture":{
@@ -42,7 +42,7 @@
             "post": {
               "url": "/api/recruits",
               "headers" : {
-                "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWNrbmFtZSI6Im5vdHBvc3QxMjMiLCJpYXQiOjE2NTg0ODE0OTIsImV4cCI6MTY1ODQ5NTg5Mn0.Yo8qgc98hasYbAX_rWVJTsQSDDIZjoSguuulNkLTEsY"
+                "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWNrbmFtZSI6InRlc3QwNzIzIiwiaWF0IjoxNjU4NTc2NzYyLCJleHAiOjE2NTg1OTExNjJ9.3C5Zkue_wvbuZcMw5w4oZ8Q5YpaCp2q6RxxQQlVviaM"
               },
               "json" : {
                 "title" : "감자",

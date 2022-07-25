@@ -27,7 +27,7 @@
     "swagger-ui-express": "^4.4.0"
   },
   "devDependencies": {
-    "artillery": "^2.0.0-21",
+    "artillery": "^2.0.0-17",
     "jest": "^28.1.2",
     "node-mocks-http": "^1.11.0",
     "supertest": "^6.2.4"
