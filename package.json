@@ -34,6 +34,8 @@
     "supertest": "^6.2.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start-ins1": "PORT=3000 nuxt start",
+    "start-ins2": "PORT=3001 nuxt start"
   }
 }
