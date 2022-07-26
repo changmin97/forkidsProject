@@ -89,7 +89,7 @@ async function recruitGet(req, res) {
         const { authorization } = req.headers;
         const { recruitPostId } = req.params;
             const [recruitDetails] = await recruitPost.find({ recruitPostId: Number(recruitPostId) }, { _id: 0 });
-            const recruitComments = await recruitComment.find({ recruitPostId: Number(recruitPostId) }, { _id: 0 }).sort({ recruitCommentId: -1 });
+            const recruitComments = await recruitComment.find({ recruitPostId: Number(recruitPostId) }, { _id: 0 }).sort({ recruitCommentId: 1 });
             if (!recruitDetails) {
                 return res.status(400).send({ result: "false", message: "게시글이 없습니다."});
             }

@@ -103,7 +103,7 @@ async function reviewGet(req, res) {
         const { authorization } = req.headers;
         const { reviewPostId } = req.params;
         const [reviewDetails] = await reviewPost.find({ reviewPostId: Number(reviewPostId) }, { _id: 0 });
-        const reviewComments = await reviewComment.find({ reviewPostId: Number(reviewPostId) }, { _id: 0 }).sort({ reviewCommentId: -1 });
+        const reviewComments = await reviewComment.find({ reviewPostId: Number(reviewPostId) }, { _id: 0 }).sort({ reviewCommentId: 1 });
         if (!reviewDetails) {
             return res.status(400).send({ result: "false", message: "게시글이 없습니다."});
         }

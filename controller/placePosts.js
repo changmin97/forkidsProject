@@ -91,7 +91,7 @@ async function placeGet(req, res) {
         const { authorization } = req.headers;
         const { placePostId } = req.params;
         const [placeDetails] = await placePost.find({ placePostId: Number(placePostId) }, { _id: 0 });
-        const placeComments = await placeComment.find({ placePostId: Number(placePostId) }, { _id: 0 }).sort({ placeCommentId: -1 });
+        const placeComments = await placeComment.find({ placePostId: Number(placePostId) }, { _id: 0 }).sort({ placeCommentId: 1 });
         if (!placeDetails) {
             return res.status(400).send({ result: "false", message: "게시글이 없습니다."});
         }
